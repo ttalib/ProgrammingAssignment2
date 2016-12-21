@@ -1,4 +1,5 @@
-makeCacheMatrix <- function(x = matrix()) {
+makeCacheMatrix <- function(x = matrix()) {  #stores x as matrix and caches it
+                                             #in parent enviroment
   i <- NULL
   set <- function(y) {
     x <<- y
@@ -12,7 +13,8 @@ makeCacheMatrix <- function(x = matrix()) {
        getinv = getinv)
 }
 
-cacheSolve <- function(x, ...) {
+cacheSolve <- function(x, ...) {           #looks if cachesolve already has a
+					   #value and calculates if not
   i <- x$getinv()
   if(!is.null(i)) {
     message("getting cache value:")
